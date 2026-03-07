@@ -8,6 +8,7 @@ For detailed guidelines on specific topics, refer to the modular documentation i
 ALWAYS refer to the relevant .md file BEFORE generating any code:
 
 - [docs/auth.md](docs/auth.md) — Clerk authentication standards, protected routes, and sign-in/sign-up modal rules.
+- [docs/ui-components.md](docs/ui-components.md) — shadcn/ui usage rules, component installation, and composition patterns.
 
 ## Project Overview
 
