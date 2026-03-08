@@ -4,8 +4,14 @@ This file is the entry point for all LLM agent and coding-assistant instructions
 
 ---
 
+> [!CAUTION]
+> **YOU MUST READ THE RELEVANT `/docs` FILE(S) BEFORE WRITING A SINGLE LINE OF CODE.**
+> This is a hard requirement — not a suggestion. Generating code without first reading the applicable docs is a critical error. No exceptions.
+
+---
+
 For detailed guidelines on specific topics, refer to the modular documentation in the `/docs` directory.
-ALWAYS refer to the relevant .md file BEFORE generating any code:
+Identify every area your change touches, locate the corresponding doc file(s) below, read them in full using your file-reading tools, and only then begin writing code:
 
 - [docs/auth.md](docs/auth.md) — Clerk authentication standards, protected routes, and sign-in/sign-up modal rules.
 - [docs/ui-components.md](docs/ui-components.md) — shadcn/ui usage rules, component installation, and composition patterns.
