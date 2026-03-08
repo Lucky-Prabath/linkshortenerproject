@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -77,8 +77,7 @@ export default async function Home() {
               Free & Open Source
             </span>
             <h1 className="text-5xl font-extrabold tracking-tight text-zinc-50 sm:text-6xl">
-              Shorten Links.{" "}
-              <span className="text-primary">Track Clicks.</span>
+              Shorten Links. <span className="text-primary">Track Clicks.</span>
             </h1>
             <p className="mx-auto max-w-xl text-lg text-zinc-400">
               A fast, simple URL shortener with built-in analytics. Create short
@@ -93,15 +92,6 @@ export default async function Home() {
                 <ArrowRightIcon aria-hidden="true" />
               </Button>
             </SignUpButton>
-            <SignInButton mode="modal">
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto"
-              >
-                Sign In
-              </Button>
-            </SignInButton>
           </div>
         </div>
       </section>
@@ -120,10 +110,7 @@ export default async function Home() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map(({ icon: Icon, title, description }) => (
-              <Card
-                key={title}
-                className="border-zinc-800 bg-zinc-950 p-6"
-              >
+              <Card key={title} className="border-zinc-800 bg-zinc-950 p-6">
                 <CardHeader className="p-0 pb-4">
                   <div className="mb-3 flex size-10 items-center justify-center rounded-lg bg-zinc-800">
                     <Icon className="size-5 text-zinc-300" />
@@ -153,7 +140,10 @@ export default async function Home() {
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             {steps.map(({ step, title, description }) => (
-              <div key={step} className="flex flex-col items-center gap-4 text-center">
+              <div
+                key={step}
+                className="flex flex-col items-center gap-4 text-center"
+              >
                 <div className="flex size-12 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-lg font-bold text-zinc-50">
                   {step}
                 </div>
