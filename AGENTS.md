@@ -32,7 +32,10 @@ This is a **full-stack URL shortener web application** built with Next.js 16 (Ap
 1. **Home page** (`app/page.tsx`) — presents a URL input form. Submitting it calls a server action in `lib/actions/links.ts` which validates the URL, generates a unique slug, and inserts a row into the `link` table.
 2. **Redirect route** (`app/[slug]/page.tsx`) — a dynamic Server Component that looks up the slug in the database. If found, it increments `click_count` and redirects to `original_url` with `redirect()`. If not found, it calls `notFound()`.
 3. **Dashboard** (`app/dashboard/page.tsx`) — a protected page that fetches all links belonging to the signed-in user and renders a table of results. Deletion is handled by a server action; copying the short URL is handled by a `"use client"` component.
-4. **Authentication** — managed entirely by Clerk. Route protection is enforced in `middleware.ts` using `clerkMiddleware`. The Clerk `userId` is stored directly as a column on the `link` table to scope all queries.
+4. **Authentication** — managed entirely by Clerk. Route protection is enforced in `proxy.ts` using `clerkMiddleware`. The Clerk `userId` is stored directly as a column on the `link` table to scope all queries.
+
+> [!WARNING]
+> **`middleware.ts` is deprecated and must NOT be used in this project.** Next.js 16 (the version used here) has deprecated `middleware.ts` in favour of `proxy.ts`. All middleware logic — including Clerk route protection — must live in `proxy.ts`. Never create or modify `middleware.ts`.
 
 ### Data model
 
@@ -68,5 +71,6 @@ The primary (and currently only) table is `link` in `db/schema.ts`:
 6. **Use shadcn/ui components.** Do not hand-roll UI primitives that shadcn already provides.
 7. **All database access goes through Drizzle ORM.** No raw SQL strings outside of migration files.
 8. **All auth is handled by Clerk.** Do not implement custom auth logic.
+11. **NEVER use `middleware.ts`.** It is deprecated in Next.js 16. All middleware (including Clerk route protection) must be placed in `proxy.ts` instead.
 9. **Follow the existing file/folder naming conventions** documented in [docs/project-structure.md](docs/project-structure.md).
 10. **Lint must pass.** Run `npm run lint` before considering any task complete.

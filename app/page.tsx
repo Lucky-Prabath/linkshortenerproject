@@ -86,7 +86,7 @@ export default async function Home() {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <SignUpButton mode="modal">
+            <SignUpButton mode="modal" forceRedirectUrl="/dashboard">
               <Button size="lg" className="w-full sm:w-auto">
                 Get Started Free
                 <ArrowRightIcon aria-hidden="true" />
