@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { CreateLinkDialog } from "./_components/create-link-dialog";
+import { LinkActions } from "./_components/link-actions";
 
 export default async function DashboardPage() {
   const { userId } = await auth();
@@ -35,6 +36,7 @@ export default async function DashboardPage() {
               <TableHead>Short Code</TableHead>
               <TableHead>Original URL</TableHead>
               <TableHead>Created</TableHead>
+              <TableHead className="w-[100px]">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -53,6 +55,13 @@ export default async function DashboardPage() {
                 </TableCell>
                 <TableCell>
                   {new Date(link.createdAt).toLocaleDateString()}
+                </TableCell>
+                <TableCell>
+                  <LinkActions
+                    id={link.id}
+                    url={link.url}
+                    shortCode={link.shortCode}
+                  />
                 </TableCell>
               </TableRow>
             ))}
