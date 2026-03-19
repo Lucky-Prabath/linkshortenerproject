@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying any authentication in the project.
+---
+
 # Authentication Standards
 
 All authentication in this project is handled exclusively by **Clerk**. No other auth libraries, custom JWT logic, session management, or third-party auth providers should ever be introduced.

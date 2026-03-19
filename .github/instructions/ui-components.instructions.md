@@ -1,3 +1,9 @@
+
+---
+description: Read this before creating or modifying UI components in the project.
+---
+
+
 # UI Component Standards
 
 All UI in this project is built with **shadcn/ui**. Do not hand-roll custom components for anything shadcn already provides.
