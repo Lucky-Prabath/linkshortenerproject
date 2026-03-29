@@ -42,3 +42,14 @@ export async function deleteLink(
     .returning({ id: link.id });
   return result.length > 0;
 }
+
+export async function getLinkByShortCode(
+  shortCode: string
+): Promise<Link | null> {
+  const [found] = await db
+    .select()
+    .from(link)
+    .where(eq(link.shortCode, shortCode))
+    .limit(1);
+  return found ?? null;
+}
