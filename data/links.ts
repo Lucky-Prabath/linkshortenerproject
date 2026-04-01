@@ -1,6 +1,6 @@
-import { and, desc, eq } from "drizzle-orm";
-import dbModule from "@/db";
-import { link, type Link, type NewLink } from "@/db/schema";
+import { and, desc, eq } from 'drizzle-orm';
+import dbModule from '@/db';
+import { link, type Link, type NewLink } from '@/db/schema';
 
 const { db } = dbModule;
 
@@ -13,7 +13,7 @@ export async function getLinksByUserId(userId: string): Promise<Link[]> {
 }
 
 export async function createLink(
-  data: Pick<NewLink, "userId" | "url" | "shortCode">
+  data: Pick<NewLink, 'userId' | 'url' | 'shortCode'>,
 ): Promise<Link> {
   const [created] = await db.insert(link).values(data).returning();
   return created;
@@ -22,7 +22,7 @@ export async function createLink(
 export async function updateLink(
   id: number,
   userId: string,
-  data: Pick<NewLink, "url">
+  data: Pick<NewLink, 'url'>,
 ): Promise<Link | null> {
   const [updated] = await db
     .update(link)
@@ -32,10 +32,7 @@ export async function updateLink(
   return updated ?? null;
 }
 
-export async function deleteLink(
-  id: number,
-  userId: string
-): Promise<boolean> {
+export async function deleteLink(id: number, userId: string): Promise<boolean> {
   const result = await db
     .delete(link)
     .where(and(eq(link.id, id), eq(link.userId, userId)))
@@ -44,12 +41,13 @@ export async function deleteLink(
 }
 
 export async function getLinkByShortCode(
-  shortCode: string
+  shortCode: string,
 ): Promise<Link | null> {
   const [found] = await db
     .select()
     .from(link)
     .where(eq(link.shortCode, shortCode))
-    .limit(1);
+    .limit(1)
+    .catch(() => []);
   return found ?? null;
 }

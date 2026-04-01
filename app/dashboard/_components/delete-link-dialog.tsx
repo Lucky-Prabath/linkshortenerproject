@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Trash2 } from "lucide-react";
+import { useState } from 'react';
+import { Trash2 } from 'lucide-react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,9 +12,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
-import { deleteLinkAction } from "./actions";
+} from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+import { deleteLinkAction } from './actions';
 
 interface DeleteLinkDialogProps {
   id: number;
@@ -46,7 +46,7 @@ export function DeleteLinkDialog({ id, shortCode }: DeleteLinkDialogProps) {
         <AlertDialogHeader>
           <AlertDialogTitle>Delete Short Link</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to delete{" "}
+            Are you sure you want to delete{' '}
             <span className="font-mono font-medium">{shortCode}</span>? This
             action cannot be undone and the short link will stop working
             immediately.
@@ -59,7 +59,7 @@ export function DeleteLinkDialog({ id, shortCode }: DeleteLinkDialogProps) {
             disabled={isPending}
             className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
           >
-            {isPending ? "Deleting..." : "Delete"}
+            {isPending ? 'Deleting...' : 'Delete'}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

@@ -1,6 +1,6 @@
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
-import { getLinksByUserId } from "@/data/links";
+import { auth } from '@clerk/nextjs/server';
+import { redirect } from 'next/navigation';
+import { getLinksByUserId } from '@/data/links';
 import {
   Table,
   TableBody,
@@ -8,15 +8,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { CreateLinkDialog } from "./_components/create-link-dialog";
-import { LinkActions } from "./_components/link-actions";
+} from '@/components/ui/table';
+import { CreateLinkDialog } from './_components/create-link-dialog';
+import { LinkActions } from './_components/link-actions';
 
 export default async function DashboardPage() {
   const { userId } = await auth();
 
   if (!userId) {
-    redirect("/");
+    redirect('/');
   }
 
   const links = await getLinksByUserId(userId);

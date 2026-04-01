@@ -1,5 +1,5 @@
-import { EditLinkDialog } from "./edit-link-dialog";
-import { DeleteLinkDialog } from "./delete-link-dialog";
+import { EditLinkDialog } from './edit-link-dialog';
+import { DeleteLinkDialog } from './delete-link-dialog';
 
 interface LinkActionsProps {
   id: number;

@@ -1,8 +1,6 @@
-
 ---
 description: Read this before creating or modifying UI components in the project.
 ---
-
 
 # UI Component Standards
 
@@ -33,8 +31,8 @@ npx shadcn@latest add table
 Components are added to `components/ui/` and are immediately importable:
 
 ```tsx
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 ```
 
 ---
@@ -45,8 +43,8 @@ When you need reusable behaviour on top of a shadcn primitive, wrap it — don't
 
 ```tsx
 // components/confirm-dialog.tsx  ✅ Correct
-import { Dialog, DialogContent, DialogFooter } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogFooter } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
 export function ConfirmDialog({ onConfirm }: { onConfirm: () => void }) {
   return (

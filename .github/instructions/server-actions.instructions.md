@@ -24,11 +24,11 @@ All data mutations in this project must be performed via **Next.js Server Action
 ## Server Action Structure
 
 ```ts
-"use server";
+'use server';
 
-import { auth } from "@clerk/nextjs/server";
-import { z } from "zod";
-import { createLink } from "@/data/links"; // helper from /data
+import { auth } from '@clerk/nextjs/server';
+import { z } from 'zod';
+import { createLink } from '@/data/links'; // helper from /data
 
 const createLinkSchema = z.object({
   originalUrl: z.string().url(),
@@ -42,7 +42,7 @@ export async function createLinkAction(input: {
 > {
   // 1. Auth check
   const { userId } = await auth();
-  if (!userId) return { error: "Unauthorized" };
+  if (!userId) return { error: 'Unauthorized' };
 
   // 2. Validate input
   const result = createLinkSchema.safeParse(input);

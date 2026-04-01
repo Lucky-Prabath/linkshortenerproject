@@ -1,7 +1,9 @@
 ---
 description: Read this file to uderstand how to fetch data in the project.
 ---
+
 # Data Fetching Guidelines
+
 This document outlines the best practices and guidelines for fetching data in our Next.js application. Adhering to these guidelines will ensure consistentency, performance, and maintainability across the codebase.
 
 ## 1. Use Server Components for Data Fetching

@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Plus } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { CreateLinkForm } from "./create-link-form";
+} from '@/components/ui/dialog';
+import { CreateLinkForm } from './create-link-form';
 
 export function CreateLinkDialog() {
   const [open, setOpen] = useState(false);

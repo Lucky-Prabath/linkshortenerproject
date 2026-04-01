@@ -1,71 +1,71 @@
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
-import { SignUpButton } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
+import { auth } from '@clerk/nextjs/server';
+import { redirect } from 'next/navigation';
+import { SignUpButton } from '@clerk/nextjs';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 import {
   LinkIcon,
   BarChart2Icon,
   LayoutDashboardIcon,
   CopyIcon,
   ArrowRightIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
 const features = [
   {
     icon: LinkIcon,
-    title: "Instant URL Shortening",
+    title: 'Instant URL Shortening',
     description:
-      "Paste any long URL and get a short, clean link in seconds. No sign-up required to get started.",
+      'Paste any long URL and get a short, clean link in seconds. No sign-up required to get started.',
   },
   {
     icon: BarChart2Icon,
-    title: "Click Analytics",
+    title: 'Click Analytics',
     description:
-      "Every short link automatically tracks how many times it has been clicked so you can measure reach.",
+      'Every short link automatically tracks how many times it has been clicked so you can measure reach.',
   },
   {
     icon: LayoutDashboardIcon,
-    title: "Link Dashboard",
+    title: 'Link Dashboard',
     description:
-      "Manage all your shortened links in one place. View, copy, and delete them whenever you need.",
+      'Manage all your shortened links in one place. View, copy, and delete them whenever you need.',
   },
   {
     icon: CopyIcon,
-    title: "One-Click Copy",
+    title: 'One-Click Copy',
     description:
-      "Copy your short link to the clipboard with a single click and share it anywhere instantly.",
+      'Copy your short link to the clipboard with a single click and share it anywhere instantly.',
   },
 ];
 
 const steps = [
   {
-    step: "1",
-    title: "Paste Your URL",
-    description: "Enter any long URL into the shortener and hit Shorten.",
+    step: '1',
+    title: 'Paste Your URL',
+    description: 'Enter any long URL into the shortener and hit Shorten.',
   },
   {
-    step: "2",
-    title: "Get a Short Link",
+    step: '2',
+    title: 'Get a Short Link',
     description:
-      "Receive a compact, shareable link generated just for your URL.",
+      'Receive a compact, shareable link generated just for your URL.',
   },
   {
-    step: "3",
-    title: "Share & Track",
+    step: '3',
+    title: 'Share & Track',
     description:
-      "Share the link anywhere and watch the click count grow in your dashboard.",
+      'Share the link anywhere and watch the click count grow in your dashboard.',
   },
 ];
 
 export default async function Home() {
   const { userId } = await auth();
-  if (userId) redirect("/dashboard");
+  if (userId) redirect('/dashboard');
 
   return (
     <main className="flex flex-col">

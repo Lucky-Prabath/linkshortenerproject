@@ -2,7 +2,6 @@
 
 ---
 
-
 ## Project Overview
 
 This is a **full-stack URL shortener web application** built with Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, Drizzle ORM, Neon PostgreSQL, and Clerk authentication.
@@ -58,6 +57,6 @@ The primary (and currently only) table is `link` in `db/schema.ts`:
 6. **Use shadcn/ui components.** Do not hand-roll UI primitives that shadcn already provides.
 7. **All database access goes through Drizzle ORM.** No raw SQL strings outside of migration files.
 8. **All auth is handled by Clerk.** Do not implement custom auth logic.
-11. **NEVER use `middleware.ts`.** It is deprecated in Next.js 16. All middleware (including Clerk route protection) must be placed in `proxy.ts` instead.
-9. **Follow the existing file/folder naming conventions** documented in [docs/project-structure.md](docs/project-structure.md).
-10. **Lint must pass.** Run `npm run lint` before considering any task complete.
+9. **NEVER use `middleware.ts`.** It is deprecated in Next.js 16. All middleware (including Clerk route protection) must be placed in `proxy.ts` instead.
+10. **Follow the existing file/folder naming conventions** documented in [docs/project-structure.md](docs/project-structure.md).
+11. **Lint must pass.** Run `npm run lint` before considering any task complete.

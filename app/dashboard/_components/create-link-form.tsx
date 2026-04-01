@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { createLinkAction } from "./actions";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { createLinkAction } from './actions';
 
 interface CreateLinkFormProps {
   onSuccess: () => void;
 }
 
 export function CreateLinkForm({ onSuccess }: CreateLinkFormProps) {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState(false);
 
@@ -22,10 +22,10 @@ export function CreateLinkForm({ onSuccess }: CreateLinkFormProps) {
     const result = await createLinkAction({ url });
 
     setIsPending(false);
-    if ("error" in result) {
+    if ('error' in result) {
       setError(result.error);
     } else {
-      setUrl("");
+      setUrl('');
       onSuccess();
     }
   }
@@ -48,7 +48,7 @@ export function CreateLinkForm({ onSuccess }: CreateLinkFormProps) {
       </div>
       <div className="flex justify-end">
         <Button type="submit" disabled={isPending}>
-          {isPending ? "Creating..." : "Create Link"}
+          {isPending ? 'Creating...' : 'Create Link'}
         </Button>
       </div>
     </form>

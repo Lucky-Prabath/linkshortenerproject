@@ -55,15 +55,15 @@ All authentication in this project is handled exclusively by **Clerk**. No other
 
 ```ts
 // Server Component or Server Action
-import { auth } from "@clerk/nextjs/server";
+import { auth } from '@clerk/nextjs/server';
 
 const { userId } = await auth();
-if (!userId) redirect("/"); // or handle as needed
+if (!userId) redirect('/'); // or handle as needed
 ```
 
 ```ts
 // Client Component
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from '@clerk/nextjs';
 
 const { isSignedIn, userId } = useAuth();
 ```

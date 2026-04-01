@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Pencil } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Pencil } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { updateLinkAction } from "./actions";
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { updateLinkAction } from './actions';
 
 interface EditLinkDialogProps {
   id: number;
@@ -32,7 +32,7 @@ export function EditLinkDialog({ id, currentUrl }: EditLinkDialogProps) {
     const result = await updateLinkAction({ id, url });
 
     setIsPending(false);
-    if ("error" in result) {
+    if ('error' in result) {
       setError(result.error);
     } else {
       setOpen(false);
@@ -72,7 +72,7 @@ export function EditLinkDialog({ id, currentUrl }: EditLinkDialogProps) {
           </div>
           <div className="flex justify-end">
             <Button type="submit" disabled={isPending}>
-              {isPending ? "Saving..." : "Save Changes"}
+              {isPending ? 'Saving...' : 'Save Changes'}
             </Button>
           </div>
         </form>
